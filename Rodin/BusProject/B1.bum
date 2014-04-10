@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig;de.prob.units.mchBase;ch.ethz.eventb.qualprob.qpConfig" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="B0"/>
+<org.eventb.core.seesContext name="/" org.eventb.core.target="UserContext0"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="-" org.eventb.core.identifier="waiters"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="1" org.eventb.core.identifier="travelers"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="4" org.eventb.core.identifier="state"/>
+<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name="6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="&#10;&#9;⚬&#9;WaiterArr">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="&#10;&#9;⚬&#9;WaiterArr"/>
+</org.eventb.core.event>
+<org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name="7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="WaiterEnters">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="WaiterEnters"/>
+</org.eventb.core.event>
+<org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name="8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="UserExits">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="UserExits"/>
+</org.eventb.core.event>
+<org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name="9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="BusComes">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="BusComes"/>
+</org.eventb.core.event>
+<org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name=":" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="BusGoes">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="BusGoes"/>
+</org.eventb.core.event>
+<org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name=";" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Switch">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="Switch"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

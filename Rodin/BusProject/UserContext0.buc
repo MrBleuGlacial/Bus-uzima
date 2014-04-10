@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig;de.prob.symbolic.ctxBase;de.prob.units.mchBase;org.animb.valuation.valBase" version="3">
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="'" org.eventb.core.identifier="MaxUsers"/>
+<org.eventb.core.axiom name="(" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="axm1" org.eventb.core.predicate="MaxUsers = 50"/>
+<org.eventb.core.carrierSet name=")" org.eventb.core.identifier="usersSet"/>
+<org.eventb.core.axiom name="*" org.eventb.codegen.ui.typingAttribute="--unset--" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(usersSet)"/>
+<org.eventb.core.carrierSet name="+" org.eventb.core.identifier="States"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="," org.eventb.core.identifier="BusArrived"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="-" org.eventb.core.identifier="UsersLeaving"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="." org.eventb.core.identifier="UsersEntering"/>
+<org.eventb.core.axiom name="/" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(States, {BusDeparted}, {BusArrived}, {UsersLeaving}, {UsersEntering})"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="0" org.eventb.core.identifier="BusDeparted"/>
+</org.eventb.core.contextFile>
