@@ -1,5 +1,5 @@
 Bus-uzima
 =========
 
-Project en Rodin pour le projet de conceptions formelles à l'université de bordeaux
+Projet en Rodin pour l'UE de conception formelle de l'université de Bordeaux
 
