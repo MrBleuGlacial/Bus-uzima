@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig;de.prob.symbolic.ctxBase;de.prob.units.mchBase;org.animb.valuation.valBase">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/BusProject/UserContext0.bcc|org.eventb.core.scContextFile#UserContext0" org.eventb.core.source="/BusProject/UserContext1.buc|org.eventb.core.contextFile#UserContext1|org.eventb.core.extendsContext#'"/>
+<org.eventb.core.scInternalContext name="UserContext0">
+<org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="MaxUsers=50" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.axiom#(" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name="(" org.eventb.core.label="axm2" org.eventb.core.predicate="finite(usersSet)" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.axiom#*" org.eventb.core.theorem="false"/>
+<org.eventb.core.scAxiom name=")" org.eventb.core.label="axm3" org.eventb.core.predicate="partition(States,{BusDeparted},{BusArrived},{UsersLeaving},{UsersEntering})" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.axiom#\/" org.eventb.core.theorem="false"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="BusArrived" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.constant#," org.eventb.core.type="States"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="BusDeparted" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.constant#0" org.eventb.core.type="States"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="MaxUsers" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.constant#'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.scCarrierSet name="States" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.carrierSet#+" org.eventb.core.type="ℙ(States)"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="UsersEntering" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.constant#." org.eventb.core.type="States"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="UsersLeaving" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.constant#-" org.eventb.core.type="States"/>
+<org.eventb.core.scCarrierSet name="usersSet" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.carrierSet#)" org.eventb.core.type="ℙ(usersSet)"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scCarrierSet name="set1" org.eventb.core.source="/BusProject/UserContext1.buc|org.eventb.core.contextFile#UserContext1|org.eventb.core.carrierSet#(" org.eventb.core.type="ℙ(set1)"/>
+</org.eventb.core.scContextFile>

@@ -2,7 +2,7 @@
 <org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig;de.prob.units.mchBase;ch.ethz.eventb.qualprob.qpConfig" version="5">
 <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="waiters ≔ ∅" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="travelers :∣ travelers' ⊆ usersSet ∧ card(travelers') ≤ MaxUsers" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="travelers :∣ (travelers' ⊆ usersSet) ∧ card(travelers') &lt;  MaxUsers" org.eventb.core.label="act2"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="state ≔ BusArrived" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
 <org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name="(" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="&#10;&#9;⚬&#9;WaiterArr">

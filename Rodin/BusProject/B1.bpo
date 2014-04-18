@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poFile org.eventb.core.poStamp="42">
 <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="States" org.eventb.core.type="ℙ(States)"/>
 <org.eventb.core.poIdentifier name="usersSet" org.eventb.core.type="ℙ(usersSet)"/>
@@ -12,67 +12,170 @@
 <org.eventb.core.poPredicate name="UsersEnterini" org.eventb.core.predicate="finite(usersSet)" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.axiom#*"/>
 <org.eventb.core.poPredicate name="UsersEnterinj" org.eventb.core.predicate="partition(States,{BusDeparted},{BusArrived},{UsersLeaving},{UsersEntering})" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.axiom#\/"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="6">
+<org.eventb.core.poIdentifier name="prioritaryUser" org.eventb.core.type="ℙ(usersSet)"/>
 <org.eventb.core.poIdentifier name="state" org.eventb.core.type="States"/>
 <org.eventb.core.poIdentifier name="travelers" org.eventb.core.type="ℙ(usersSet)"/>
 <org.eventb.core.poIdentifier name="waiters" org.eventb.core.type="ℙ(usersSet)"/>
-<org.eventb.core.poPredicate name="travelert" org.eventb.core.predicate="waiters⊆usersSet" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.invariant#."/>
-<org.eventb.core.poPredicate name="traveleru" org.eventb.core.predicate="travelers⊆usersSet" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.invariant#0"/>
-<org.eventb.core.poPredicate name="travelerv" org.eventb.core.predicate="card(travelers)≤MaxUsers" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.invariant#2"/>
-<org.eventb.core.poPredicate name="travelerw" org.eventb.core.predicate="waiters∩travelers=(∅ ⦂ ℙ(usersSet))" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.invariant#3"/>
-<org.eventb.core.poPredicate name="travelerx" org.eventb.core.predicate="state∈States" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.invariant#5"/>
+<org.eventb.core.poPredicate name="prioritaryUses" org.eventb.core.predicate="waiters⊆usersSet" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.invariant#."/>
+<org.eventb.core.poPredicate name="prioritaryUset" org.eventb.core.predicate="travelers⊆usersSet" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.invariant#0"/>
+<org.eventb.core.poPredicate name="prioritaryUseu" org.eventb.core.predicate="card(travelers)≤MaxUsers" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.invariant#2"/>
+<org.eventb.core.poPredicate name="prioritaryUsev" org.eventb.core.predicate="waiters∩travelers=(∅ ⦂ ℙ(usersSet))" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.invariant#3"/>
+<org.eventb.core.poPredicate name="prioritaryUsew" org.eventb.core.predicate="state∈States" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.invariant#5"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTUserContext6" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTALLHYPprioritaryUses">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="travelers'⊆usersSet∧card(travelers')&lt;MaxUsers" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#'|org.eventb.core.action#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(usersSet))∩(∅ ⦂ ℙ(usersSet))∩travelers'=(∅ ⦂ ℙ(usersSet))" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#5"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprioritaryUses" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
 <org.eventb.core.poIdentifier name="travelers'" org.eventb.core.type="ℙ(usersSet)"/>
 <org.eventb.core.poIdentifier name="waiters'" org.eventb.core.type="ℙ(usersSet)"/>
 <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="States"/>
+<org.eventb.core.poIdentifier name="prioritaryUser'" org.eventb.core.type="ℙ(usersSet)"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPUserContext6" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTUserContext6" org.eventb.core.poStamp="0"/>
-<org.eventb.core.poPredicateSet name="EVTIDENTUserContext7" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPprioritaryUses" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTprioritaryUses" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="&#10;&#9;⚬&#9;WaiterArr/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTALLHYPprioritaryUset"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="prioritaryUser∩(waiters∪{u})∩travelers=(∅ ⦂ ℙ(usersSet))" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#("/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#6"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poSequent#&#10;&#9;⚬&#9;WaiterArr\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprioritaryUset" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
 <org.eventb.core.poIdentifier name="waiters'" org.eventb.core.type="ℙ(usersSet)"/>
 <org.eventb.core.poIdentifier name="u" org.eventb.core.type="usersSet"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPUserContext7" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTUserContext7" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPprioritaryUset" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTprioritaryUset" org.eventb.core.poStamp="42">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈usersSet" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#(|org.eventb.core.guard#'"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="u∉waiters" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#(|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="u∉travelers" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#(|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="u∉prioritaryUser" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#6|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTUserContext8" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poSequent name="WaiterEnters/grd5/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTHYPprioritaryUseu)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(prioritaryUser)" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#7|org.eventb.core.guard#("/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#7|org.eventb.core.guard#("/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTHYPprioritaryUseu)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="WaiterEnters/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTALLHYPprioritaryUseu"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="prioritaryUser∩(waiters ∖ {u})∩(travelers∪{u})=(∅ ⦂ ℙ(usersSet))" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#)"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#7"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poSequent#WaiterEnters\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprioritaryUseu" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
 <org.eventb.core.poIdentifier name="travelers'" org.eventb.core.type="ℙ(usersSet)"/>
 <org.eventb.core.poIdentifier name="waiters'" org.eventb.core.type="ℙ(usersSet)"/>
 <org.eventb.core.poIdentifier name="u" org.eventb.core.type="usersSet"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPUserContext8" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTUserContext8" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTHYPprioritaryUseu)" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTprioritaryUseu" org.eventb.core.poStamp="42">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈waiters" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#)|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="state=UsersEntering" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#)|org.eventb.core.guard#,"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="card(travelers)&lt;MaxUsers" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#)|org.eventb.core.guard#-"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTUserContext9" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPprioritaryUseu" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTHYPprioritaryUseu)" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="card(prioritaryUser)=0" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#7|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="UserExits/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTALLHYPprioritaryUsev"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="prioritaryUser∩waiters∩(travelers ∖ {u})=(∅ ⦂ ℙ(usersSet))" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#*"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#8"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poSequent#UserExits\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprioritaryUsev" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
 <org.eventb.core.poIdentifier name="travelers'" org.eventb.core.type="ℙ(usersSet)"/>
 <org.eventb.core.poIdentifier name="u" org.eventb.core.type="usersSet"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPUserContext9" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTUserContext9" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPprioritaryUsev" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTprioritaryUsev" org.eventb.core.poStamp="42">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈travelers" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#*|org.eventb.core.guard#("/>
 <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="state=UsersLeaving" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#*|org.eventb.core.guard#*"/>
 <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="card(travelers)&gt;0" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#*|org.eventb.core.guard#+"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTUserContext:" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTprioritaryUsew" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
 <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="States"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPUserContext:" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTUserContext:" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPprioritaryUsew" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTprioritaryUsew" org.eventb.core.poStamp="42">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="state=BusArrived" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#+|org.eventb.core.guard#'"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTUserContext;" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTprioritaryUsex" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
 <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="States"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPUserContext;" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTUserContext;" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPprioritaryUsex" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTprioritaryUsex" org.eventb.core.poStamp="42">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="state=UsersEntering" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#,|org.eventb.core.guard#'"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTIDENTUserContext=" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTIDENTprioritaryUsey" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
 <org.eventb.core.poIdentifier name="state'" org.eventb.core.type="States"/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="EVTALLHYPUserContext=" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTUserContext=" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="EVTALLHYPprioritaryUsey" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTprioritaryUsey" org.eventb.core.poStamp="42">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="state=UsersLeaving" org.eventb.core.source="/BusProject/B0.bum|org.eventb.core.machineFile#B0|org.eventb.core.event#6|org.eventb.core.guard#("/>
 </org.eventb.core.poPredicateSet>
-<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="WaiterPrioArr/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTALLHYPprioritaryUsez"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(prioritaryUser∪{u})∩waiters∩travelers=(∅ ⦂ ℙ(usersSet))" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#?"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poSequent#WaiterPrioArr\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprioritaryUsez" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="u" org.eventb.core.type="usersSet"/>
+<org.eventb.core.poIdentifier name="prioritaryUser'" org.eventb.core.type="ℙ(usersSet)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprioritaryUsez" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTprioritaryUsez" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="u∈usersSet" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#?|org.eventb.core.guard#'"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="u∉waiters" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#?|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="u∉travelers" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#?|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="u∉prioritaryUser" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#?|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="WaiterPrioEnters/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTHYPprioritaryUse{("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="finite(travelers)" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#B|org.eventb.core.guard#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#B|org.eventb.core.guard#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTHYPprioritaryUse{("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="WaiterPrioEnters/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTALLHYPprioritaryUse{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(prioritaryUser ∖ {v})∩waiters∩(travelers∪{v})=(∅ ⦂ ℙ(usersSet))" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#B"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poSequent#WaiterPrioEnters\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="WaiterPrioEnters/travelers/EQL" org.eventb.core.accurate="true" org.eventb.core.poDesc="Equality of common variables" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTALLHYPprioritaryUse{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="travelers∪{v}=travelers" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#B|org.eventb.core.action#,"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#B"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poSequent#WaiterPrioEnters\/travelers\/EQL|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTprioritaryUse{" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poIdentifier name="travelers'" org.eventb.core.type="ℙ(usersSet)"/>
+<org.eventb.core.poIdentifier name="v" org.eventb.core.type="usersSet"/>
+<org.eventb.core.poIdentifier name="prioritaryUser'" org.eventb.core.type="ℙ(usersSet)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPprioritaryUse{(" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTIDENTprioritaryUse{" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="v∈prioritaryUser" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#B|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="state=UsersEntering" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#B|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPprioritaryUse{" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#EVTHYPprioritaryUse{(" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="card(travelers)&lt;MaxUsers" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.event#B|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/BusProject/B1.bpo|org.eventb.core.poFile#B1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="42">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="prioritaryUser⊆usersSet" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#&gt;"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="prioritaryUser∩waiters∩travelers=(∅ ⦂ ℙ(usersSet))" org.eventb.core.source="/BusProject/B1.bum|org.eventb.core.machineFile#B1|org.eventb.core.invariant#C"/>
+</org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>

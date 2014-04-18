@@ -5,12 +5,16 @@
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="-" org.eventb.core.identifier="waiters"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="1" org.eventb.core.identifier="travelers"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="4" org.eventb.core.identifier="state"/>
-<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="*" org.eventb.core.assignment="prioritaryUser ≔ ∅" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
 <org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name="6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="&#10;&#9;⚬&#9;WaiterArr">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="&#10;&#9;⚬&#9;WaiterArr"/>
+<org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd4" org.eventb.core.predicate="u ∉ prioritaryUser"/>
 </org.eventb.core.event>
 <org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name="7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="WaiterEnters">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="WaiterEnters"/>
+<org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd5" org.eventb.core.predicate="card(prioritaryUser) = 0"/>
 </org.eventb.core.event>
 <org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name="8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="UserExits">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="UserExits"/>
@@ -24,4 +28,23 @@
 <org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name=";" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Switch">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Switch"/>
 </org.eventb.core.event>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="=" org.eventb.core.identifier="prioritaryUser"/>
+<org.eventb.core.invariant name="&gt;" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="inv1" org.eventb.core.predicate="prioritaryUser ⊆ usersSet"/>
+<org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name="?" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="WaiterPrioArr">
+<org.eventb.core.guard name="'" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ usersSet"/>
+<org.eventb.core.parameter name="(" org.eventb.codegen.ui.parameterTypeAttribute="--unset--" org.eventb.core.identifier="u"/>
+<org.eventb.core.guard name=")" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd2" org.eventb.core.predicate="u ∉ waiters"/>
+<org.eventb.core.guard name="*" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd3" org.eventb.core.predicate="u ∉ travelers"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="prioritaryUser ≔ prioritaryUser ∪ {u}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="," org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd4" org.eventb.core.predicate="u ∉ prioritaryUser"/>
+</org.eventb.core.event>
+<org.eventb.core.event ch.ethz.eventb.qualprob.probabilistic="false" name="B" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="WaiterPrioEnters">
+<org.eventb.core.parameter name="'" org.eventb.codegen.ui.parameterTypeAttribute="--unset--" org.eventb.core.identifier="v"/>
+<org.eventb.core.guard name="(" org.eventb.codegen.ui.typingAttribute="Typing" org.eventb.core.label="grd1" org.eventb.core.predicate="v ∈ prioritaryUser"/>
+<org.eventb.core.guard name=")" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd2" org.eventb.core.predicate="state = UsersEntering"/>
+<org.eventb.core.guard name="*" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="grd3" org.eventb.core.predicate="card(travelers) &lt; MaxUsers"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="prioritaryUser ≔ prioritaryUser ∖ {v}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="travelers ≔ travelers ∪ {v}" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="C" org.eventb.codegen.ui.typingAttribute="NonTyping" org.eventb.core.label="inv4" org.eventb.core.predicate="prioritaryUser ∩ waiters ∩ travelers = ∅"/>
 </org.eventb.core.machineFile>

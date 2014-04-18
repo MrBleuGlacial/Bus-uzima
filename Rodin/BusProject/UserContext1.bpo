@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="States" org.eventb.core.type="ℙ(States)"/>
+<org.eventb.core.poIdentifier name="usersSet" org.eventb.core.type="ℙ(usersSet)"/>
+<org.eventb.core.poIdentifier name="BusArrived" org.eventb.core.type="States"/>
+<org.eventb.core.poIdentifier name="BusDeparted" org.eventb.core.type="States"/>
+<org.eventb.core.poIdentifier name="MaxUsers" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="UsersEntering" org.eventb.core.type="States"/>
+<org.eventb.core.poIdentifier name="UsersLeaving" org.eventb.core.type="States"/>
+<org.eventb.core.poPredicate name="UsersEnterinh" org.eventb.core.predicate="MaxUsers=50" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.axiom#("/>
+<org.eventb.core.poPredicate name="UsersEnterini" org.eventb.core.predicate="finite(usersSet)" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="UsersEnterinj" org.eventb.core.predicate="partition(States,{BusDeparted},{BusArrived},{UsersLeaving},{UsersEntering})" org.eventb.core.source="/BusProject/UserContext0.buc|org.eventb.core.contextFile#UserContext0|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poIdentifier name="set1" org.eventb.core.type="ℙ(set1)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/BusProject/UserContext1.bpo|org.eventb.core.poFile#UserContext1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1"/>
+</org.eventb.core.poFile>
